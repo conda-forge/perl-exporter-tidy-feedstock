@@ -4,7 +4,7 @@
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://cpan.metacpan.org/authors/id/J/JU/JUERD/Exporter-Tidy-{{ version }}.tar.gz
@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: generic
-  number: 0
+  number: 1
   script:
     - perl Makefile.PL INSTALLDIRS=vendor NO_PERLLOCAL=1 NO_PACKLIST=1
     - make
@@ -33,11 +33,10 @@ test:
 
 about:
   home: https://metacpan.org/pod/Exporter::Tidy
-  license: Any-OSI-Approved
+  license: any-OSI-perl-modules
   license_family: OTHER
   summary: 'Another way of exporting symbols'
-  license_file:
-    - {{ environ["PREFIX"] }}/man/man1/perlartistic.1
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
